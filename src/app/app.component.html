@@ -1,4 +1,10 @@
 <h1>Hello World</h1>
 
+<ul>
+  <li class="text" *ngFor="let element of items | async">
+    {{element.name}}
+  </li>
+</ul>
+
 <button>Post</button>
 <button>Get</button>
