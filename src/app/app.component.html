@@ -1,10 +1,9 @@
-<h1>Hello World</h1>
+<label for="Name"></label>
+<input type="text" placeholder="ex Carlos" name="name" (input)="onUpdateInputName($event)">
+<button (click)="addItem()" type="button" >Save</button>
 
 <ul>
   <li class="text" *ngFor="let element of items | async">
     {{element.name}}
   </li>
 </ul>
-
-<button>Post</button>
-<button>Get</button>
