@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { FormObject } from '../models/FormObject';
 
 @Component({
   selector: 'app-show-info',
@@ -7,19 +8,22 @@ import { ApiService } from '../api.service';
   styleUrls: ['./show-info.component.css']
 })
 export class ShowInfoComponent implements OnInit {
+  listData: FormObject[] = [];
 
   constructor(private _apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.showItem();
+    this.getItem();
   }
 
-  showItem() {
+  getItem() {
     this._apiService.getItem().subscribe(doc => {
-      console.log(doc)
+      this.listData = [];
       doc.forEach((element: any) => {
-        console.log(element.payload.doc.id)
-        console.log(element.payload.doc.data());
+        this.listData.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        });
       });
     })
   }

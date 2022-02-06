@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   getItem(): Observable<any> {
-    return this.firebase.collection('items').snapshotChanges();
+    return this.firebase.collection('items', ref => ref.orderBy('added', 'asc')).snapshotChanges();
   }
 
 }

@@ -1,9 +1,11 @@
 export class FormObject {
-
-  constructor(name: string) {
-    this.name = name;
-  }
-  
   id?:string;
   name: string;
+  added: Date;
+  
+  constructor(name: string) {
+    this.name = name;
+    this.added = new Date();
+  }
+
 }

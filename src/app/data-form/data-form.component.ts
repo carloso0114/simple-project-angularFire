@@ -22,7 +22,8 @@ export class DataFormComponent implements OnInit {
 
   newItem() {
     const DATA: FormObject = {
-      name: this.form.value.name
+      name: this.form.value.name,
+      added: new Date()
     }
     this._apiService.saveItem(DATA).then(() => {
       this.form.reset();
