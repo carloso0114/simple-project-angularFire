@@ -28,4 +28,13 @@ export class ShowInfoComponent implements OnInit {
     })
   }
 
+  deleteItem(id: any) {
+    this._apiService.deleteItem(id).then(() => {
+      console.log('Deleted')
+    }, error => {
+      console.log('Error')
+      console.log(error);
+    })
+  }
+
 }
