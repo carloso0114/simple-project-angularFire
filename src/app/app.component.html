@@ -1,9 +1,4 @@
-<label for="Name"></label>
-<input type="text" placeholder="ex Carlos" name="name" (input)="onUpdateInputName($event)">
-<button (click)="addItem()" type="button" >Save</button>
+<h1>Basic angular fire library integration</h1>
 
-<ul>
-  <li class="text" *ngFor="let element of items | async">
-    {{element.name}}
-  </li>
-</ul>
+<app-data-form></app-data-form>
+<app-show-info></app-show-info>

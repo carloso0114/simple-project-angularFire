@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 
 @Component({
@@ -10,18 +8,7 @@ import { ApiService } from './api.service';
   providers: [ApiService]
 })
 export class AppComponent {
-  items: Observable<any[]>;
-  constructor(firestore: AngularFirestore, private db: ApiService) {
-    this.items = firestore.collection('items').valueChanges();
+  constructor(private db: ApiService) {
   }
 
-  inputName = '';
-  
-  onUpdateInputName(event: Event) {
-    this.inputName = (<HTMLInputElement>event.target).value;
-  }
-
-  addItem() {
-    this.db.logToConsole(this.inputName);
-  }
 }
