@@ -11,7 +11,6 @@ export class ShowInfoComponent implements OnInit {
   listData: FormObject[] = [];
 
   constructor(private _apiService: ApiService) { }
-
   ngOnInit(): void {
     this.getItem();
   }

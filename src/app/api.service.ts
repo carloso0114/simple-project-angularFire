@@ -8,6 +8,8 @@ import { FormObject } from './models/FormObject';
 })
 
 export class ApiService {
+  listData2: FormObject[] = [];
+  
   constructor(private firestore: AngularFirestore) { }
 
   saveItem(data: FormObject): Promise<any> {
