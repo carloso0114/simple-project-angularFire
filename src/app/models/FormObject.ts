@@ -1,7 +1,7 @@
 export class FormObject {
   id?:string;
   name: string;
-  added: Date;
+  added: any;
   
   constructor(name: string) {
     this.name = name;
