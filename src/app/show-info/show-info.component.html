@@ -2,6 +2,5 @@
   <li class="text" *ngFor="let item of listData">
     {{item.name}}
     <span (click)="deleteItem(item.id)"> - DELETE</span>
-    <span> {{item.added}} </span>
   </li>
 </ul>
