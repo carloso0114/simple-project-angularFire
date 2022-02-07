@@ -1,4 +1,4 @@
 <form [formGroup]="form" (ngSubmit)="newItem()">
-  <input type="text" placeholder="ex Carlos" name="name" formControlName="name" maxlength="20">
-  <button type="submit">Save</button>
+  <input type="text" placeholder="ex Carlos" name="name" formControlName="name" maxlength="20" required>
+  <button type="submit" [disabled]="form.invalid">Save</button>
 </form>

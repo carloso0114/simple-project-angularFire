@@ -13,7 +13,7 @@ export class DataFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private _apiService: ApiService) {
     this.form = this.fb.group({
-      name: ['', [Validators.required, Validators.maxLength(20)]]
+      name: [null, Validators.required]
     })
   }
 
@@ -25,9 +25,9 @@ export class DataFormComponent implements OnInit {
       name: this.form.value.name,
       added: new Date()
     }
+    console.log((this.form))
     this._apiService.saveItem(DATA).then(() => {
       this.form.reset();
-      console.log('saved')
     }, error => {
       console.log(error)
     })
